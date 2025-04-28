@@ -10,13 +10,13 @@ public class HelloController {
 
 //    http://localhost:8080/hello
     @GetMapping("/hello")
-    public String hello(){
-        return "Hello World!";
+    public HelloResponse hello(){
+        return new HelloResponse("Hello World!");
     }
 
     //    http://localhost:8080/hello
     @PostMapping("/hello")
-    public String helloPost(@RequestBody String name){
-        return "Hello"+name+"!";
+    public HelloResponse helloPost(@RequestBody String name){
+        return new HelloResponse("Hello "+name+"!");
     }
 }
